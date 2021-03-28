@@ -48,12 +48,14 @@
             this.tbNumberStatus = new System.Windows.Forms.TextBox();
             this.bEqually = new System.Windows.Forms.Button();
             this.bSqrt = new System.Windows.Forms.Button();
-            this.bExp = new System.Windows.Forms.Button();
+            this.bPow = new System.Windows.Forms.Button();
+            this.History = new System.Windows.Forms.Label();
+            this.ActiveOperation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // b1
             // 
-            this.b1.Location = new System.Drawing.Point(12, 82);
+            this.b1.Location = new System.Drawing.Point(12, 158);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(32, 32);
             this.b1.TabIndex = 0;
@@ -63,7 +65,7 @@
             // 
             // b2
             // 
-            this.b2.Location = new System.Drawing.Point(50, 82);
+            this.b2.Location = new System.Drawing.Point(50, 158);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(32, 32);
             this.b2.TabIndex = 1;
@@ -73,7 +75,7 @@
             // 
             // b3
             // 
-            this.b3.Location = new System.Drawing.Point(88, 82);
+            this.b3.Location = new System.Drawing.Point(88, 158);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(32, 32);
             this.b3.TabIndex = 2;
@@ -113,7 +115,7 @@
             // 
             // b7
             // 
-            this.b7.Location = new System.Drawing.Point(12, 158);
+            this.b7.Location = new System.Drawing.Point(12, 82);
             this.b7.Name = "b7";
             this.b7.Size = new System.Drawing.Size(32, 32);
             this.b7.TabIndex = 6;
@@ -123,7 +125,7 @@
             // 
             // b8
             // 
-            this.b8.Location = new System.Drawing.Point(50, 158);
+            this.b8.Location = new System.Drawing.Point(50, 82);
             this.b8.Name = "b8";
             this.b8.Size = new System.Drawing.Size(32, 32);
             this.b8.TabIndex = 7;
@@ -133,7 +135,7 @@
             // 
             // b9
             // 
-            this.b9.Location = new System.Drawing.Point(88, 158);
+            this.b9.Location = new System.Drawing.Point(88, 82);
             this.b9.Name = "b9";
             this.b9.Size = new System.Drawing.Size(32, 32);
             this.b9.TabIndex = 8;
@@ -159,6 +161,7 @@
             this.bAdd.TabIndex = 10;
             this.bAdd.Text = "+";
             this.bAdd.UseVisualStyleBackColor = true;
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // bSub
             // 
@@ -168,6 +171,7 @@
             this.bSub.TabIndex = 11;
             this.bSub.Text = "-";
             this.bSub.UseVisualStyleBackColor = true;
+            this.bSub.Click += new System.EventHandler(this.bSub_Click);
             // 
             // bMultiplication
             // 
@@ -177,6 +181,7 @@
             this.bMultiplication.TabIndex = 12;
             this.bMultiplication.Text = "x";
             this.bMultiplication.UseVisualStyleBackColor = true;
+            this.bMultiplication.Click += new System.EventHandler(this.bMultiplication_Click);
             // 
             // bDivision
             // 
@@ -186,6 +191,7 @@
             this.bDivision.TabIndex = 13;
             this.bDivision.Text = "/";
             this.bDivision.UseVisualStyleBackColor = true;
+            this.bDivision.Click += new System.EventHandler(this.bDivision_Click);
             // 
             // bClear
             // 
@@ -244,22 +250,45 @@
             this.bSqrt.TabIndex = 19;
             this.bSqrt.Text = "√";
             this.bSqrt.UseVisualStyleBackColor = true;
+            this.bSqrt.Click += new System.EventHandler(this.bSqrt_Click);
             // 
-            // bExp
+            // bPow
             // 
-            this.bExp.Location = new System.Drawing.Point(164, 120);
-            this.bExp.Name = "bExp";
-            this.bExp.Size = new System.Drawing.Size(32, 32);
-            this.bExp.TabIndex = 20;
-            this.bExp.Text = "xⁿ";
-            this.bExp.UseVisualStyleBackColor = true;
+            this.bPow.Location = new System.Drawing.Point(164, 120);
+            this.bPow.Name = "bPow";
+            this.bPow.Size = new System.Drawing.Size(32, 32);
+            this.bPow.TabIndex = 20;
+            this.bPow.Text = "xⁿ";
+            this.bPow.UseVisualStyleBackColor = true;
+            this.bPow.Click += new System.EventHandler(this.bPow_Click);
+            // 
+            // History
+            // 
+            this.History.AutoSize = true;
+            this.History.Location = new System.Drawing.Point(51, 45);
+            this.History.Name = "History";
+            this.History.Size = new System.Drawing.Size(39, 13);
+            this.History.TabIndex = 21;
+            this.History.Text = "History";
+            // 
+            // ActiveOperation
+            // 
+            this.ActiveOperation.AutoSize = true;
+            this.ActiveOperation.Location = new System.Drawing.Point(51, 63);
+            this.ActiveOperation.Name = "ActiveOperation";
+            this.ActiveOperation.Size = new System.Drawing.Size(13, 13);
+            this.ActiveOperation.TabIndex = 22;
+            this.ActiveOperation.Text = "+";
+            this.ActiveOperation.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(208, 240);
-            this.Controls.Add(this.bExp);
+            this.Controls.Add(this.ActiveOperation);
+            this.Controls.Add(this.History);
+            this.Controls.Add(this.bPow);
             this.Controls.Add(this.bSqrt);
             this.Controls.Add(this.bEqually);
             this.Controls.Add(this.tbNumberStatus);
@@ -312,7 +341,9 @@
         private System.Windows.Forms.TextBox tbNumberStatus;
         private System.Windows.Forms.Button bEqually;
         private System.Windows.Forms.Button bSqrt;
-        private System.Windows.Forms.Button bExp;
+        private System.Windows.Forms.Button bPow;
+        private System.Windows.Forms.Label History;
+        private System.Windows.Forms.Label ActiveOperation;
     }
 }
 
