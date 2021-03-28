@@ -59,6 +59,7 @@
             this.b1.TabIndex = 0;
             this.b1.Text = "1";
             this.b1.UseVisualStyleBackColor = true;
+            this.b1.Click += new System.EventHandler(this.b1_Click);
             // 
             // b2
             // 
@@ -68,6 +69,7 @@
             this.b2.TabIndex = 1;
             this.b2.Text = "2";
             this.b2.UseVisualStyleBackColor = true;
+            this.b2.Click += new System.EventHandler(this.b2_Click);
             // 
             // b3
             // 
@@ -77,6 +79,7 @@
             this.b3.TabIndex = 2;
             this.b3.Text = "3";
             this.b3.UseVisualStyleBackColor = true;
+            this.b3.Click += new System.EventHandler(this.b3_Click);
             // 
             // b4
             // 
@@ -86,6 +89,7 @@
             this.b4.TabIndex = 3;
             this.b4.Text = "4";
             this.b4.UseVisualStyleBackColor = true;
+            this.b4.Click += new System.EventHandler(this.b4_Click);
             // 
             // b5
             // 
@@ -95,6 +99,7 @@
             this.b5.TabIndex = 4;
             this.b5.Text = "5";
             this.b5.UseVisualStyleBackColor = true;
+            this.b5.Click += new System.EventHandler(this.b5_Click);
             // 
             // b6
             // 
@@ -104,6 +109,7 @@
             this.b6.TabIndex = 5;
             this.b6.Text = "6";
             this.b6.UseVisualStyleBackColor = true;
+            this.b6.Click += new System.EventHandler(this.b6_Click);
             // 
             // b7
             // 
@@ -113,6 +119,7 @@
             this.b7.TabIndex = 6;
             this.b7.Text = "7";
             this.b7.UseVisualStyleBackColor = true;
+            this.b7.Click += new System.EventHandler(this.b7_Click);
             // 
             // b8
             // 
@@ -122,6 +129,7 @@
             this.b8.TabIndex = 7;
             this.b8.Text = "8";
             this.b8.UseVisualStyleBackColor = true;
+            this.b8.Click += new System.EventHandler(this.b8_Click);
             // 
             // b9
             // 
@@ -131,6 +139,7 @@
             this.b9.TabIndex = 8;
             this.b9.Text = "9";
             this.b9.UseVisualStyleBackColor = true;
+            this.b9.Click += new System.EventHandler(this.b9_Click);
             // 
             // b0
             // 
@@ -140,6 +149,7 @@
             this.b0.TabIndex = 9;
             this.b0.Text = "0";
             this.b0.UseVisualStyleBackColor = true;
+            this.b0.Click += new System.EventHandler(this.b0_Click);
             // 
             // bAdd
             // 
@@ -185,6 +195,7 @@
             this.bClear.TabIndex = 14;
             this.bClear.Text = "С";
             this.bClear.UseVisualStyleBackColor = true;
+            this.bClear.Click += new System.EventHandler(this.bClear_Click);
             // 
             // bBackspace
             // 
@@ -194,6 +205,7 @@
             this.bBackspace.TabIndex = 15;
             this.bBackspace.Text = "←";
             this.bBackspace.UseVisualStyleBackColor = true;
+            this.bBackspace.Click += new System.EventHandler(this.bBackspace_Click);
             // 
             // bDot
             // 
@@ -222,6 +234,7 @@
             this.bEqually.TabIndex = 18;
             this.bEqually.Text = "=";
             this.bEqually.UseVisualStyleBackColor = true;
+            this.bEqually.Click += new System.EventHandler(this.bEqually_Click);
             // 
             // bSqrt
             // 
